@@ -29,6 +29,7 @@ import sys.FileSystem;
 	i do not give you guys permission to grab this specific code and re-use it in your own mods without asking me first.
 	the secondary dev, ben
 */
+	//
 
 class CharacterInSelect
 {
@@ -93,26 +94,59 @@ class CharacterSelectState extends MusicBeatState
 	public var characters:Array<CharacterInSelect> = 
 	[
 		new CharacterInSelect('bf', [1, 1, 1, 1], [
-			new CharacterForm('bf', 'Boyfriend', [1,1,1,1]),
+			new CharacterForm('bfFur', 'Eva!Boyfriend', [1,1,1,1]),
+			new CharacterForm('bf', 'Canon Boyfriend', [1,1,1,1]),
 			new CharacterForm('bf-pixel', 'Pixel Boyfriend', [1,1,1,1])
 		]),
+		new CharacterInSelect('sally', [1, 1, 1, 1], [
+			//new CharacterForm('sally', 'Eva!Sally', [1,1,1,1]),
+			new CharacterForm('bf-sally-new', 'Canon Sally', [1,1,1,1]),
+			new CharacterForm('bf-sally', 'OG Sally', [1,1,1,1])//,
+			//new CharacterForm('bf-sally-floom', 'Pixel Boyfriend', [1,1,1,1])
+		]),
+		new CharacterInSelect('eevee', [1, 0.5, 0.5, 1.5], [
+			new CharacterForm('eevee', 'Eva', [1, 0.5, 0.5, 1.5])
+		]),
+		new CharacterInSelect('shade', [0.5, 0.5, 2, 0.5], [ //
+			new CharacterForm('shade', 'Shade', [0.5, 1, 1.5, 1]),
+			new CharacterForm('shade-old', 'Pre Alpha Shade', [0.5, 1, 1.5, 1])//,
+		]),
 		new CharacterInSelect('dave', [0.25, 0.25, 2, 2], [
-			new CharacterForm('dave', 'Dave', [0.25, 0.25, 2, 2]),
+			//new CharacterForm('dave', 'Davis', [0.25, 0.25, 2, 2]),
+			new CharacterForm('dave-evo', 'Evo!Dave', [0.25, 0.25, 2, 2]),
+			new CharacterForm('dave', 'Canon Dave', [0.25, 0.25, 2, 2]),
+			new CharacterForm('dave-angey', 'Canon 3D Dave', [2, 2, 0.25, 0.25], '3D')
 		]),
 		new CharacterInSelect('bambi', [0, 0, 3, 0], [
-			new CharacterForm('bambi-new', 'Bambi', [0, 0, 3, 0]),
+			//new CharacterForm('bambi', 'Sheraph', [0, 0, 3, 0]),
+			new CharacterForm('bambi-evo', 'Evo!Bambi', [0, 0, 3, 0]),
+			//new CharacterForm('bambi-evo', 'Pissed Evo!Bambi', [0, 0, 3, 0]),
+			new CharacterForm('bambi-new', 'Canon Bambi', [0, 0, 3, 0])//,
+			//new CharacterForm('bambi-new', 'Canon Pissed Bambi', [0, 0, 3, 0])
+		]),
+		new CharacterInSelect('nove', [0, 0, 3, 0], [
+			//new CharacterForm('bambi', 'Supernove', [0, 0, 3, 0]),
+			new CharacterForm('bambi-joke', 'Mr. Bambi', [0, 0, 3, 0]),
+			//new CharacterForm('bambi-joke', 'Pissed Mr. Bambi', [-1, -1, 5, -1]),
 		]),
 		new CharacterInSelect('tristan', [2, 0.5, 0.5, 0.5], [
+			//new CharacterForm('tristan', 'Trista', [2, 0.5, 0.5, 0.5]),
+			//new CharacterForm('tristan', 'Evo!Tristan', [2, 0.5, 0.5, 0.5]),
 			new CharacterForm('tristan', 'Tristan', [2, 0.5, 0.5, 0.5]),
-		]),
-		new CharacterInSelect('tristan-golden', [0.25, 0.25, 0.25, 2], [
 			new CharacterForm('tristan-golden', 'Golden Tristan', [0.25, 0.25, 0.25, 2])
 		]),
-		new CharacterInSelect('dave-angey', [2, 2, 0.25, 0.25], [
-			new CharacterForm('dave-angey', '3D Dave', [2, 2, 0.25, 0.25], '3D')
-		]),
+		//new CharacterInSelect('bandu', [0.5, 2, 0.5, 0.5], [
+			//new CharacterForm('bandu', 'Eva!Bandu', [2, 0.5, 0.5, 0.5], '3D'),
+		//]),
+		//new CharacterInSelect('tristan-golden', [0.25, 0.25, 0.25, 2], [ //these are now forms of tristan and dave
+		//	
+		//]),
+		//new CharacterInSelect('dave-angey', [2, 2, 0.25, 0.25], [
+		//]),
 		new CharacterInSelect('bambi-3d', [0, 3, 0, 0], [
-			new CharacterForm('bambi-3d', 'Expunged', [0, 3, 0, 0], '3D'),
+			new CharacterForm('bambi-3d', 'Cheating![DATA EXPUNGED]', [0, 3, 0, 0], '3D'),
+			new CharacterForm('bambi-unfair', 'Unfairness![DATA EXPUNGED]', [0, 3, 0, 0], '3D'),
+			new CharacterForm('expunged', 'Exploitation![DATA EXPUNGED]', [0, 3, 0, 0], '3D'),
 		])
 	];
 	#if SHADERS_ENABLED
@@ -507,10 +541,10 @@ class CharacterSelectState extends MusicBeatState
 			FlxG.save.flush();
 		}
 	}
-	public static function isLocked(character:String):Bool
-	{
-		return !FlxG.save.data.charactersUnlocked.contains(character);
-	}
+	//public static function isLocked(character:String):Bool
+	//{
+	//	return !FlxG.save.data.charactersUnlocked.contains(character);
+	//}
 	public static function reset()
 	{
 		FlxG.save.data.charactersUnlocked = new Array<String>();
